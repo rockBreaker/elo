@@ -2,6 +2,7 @@
   (:require [re-frame.core :as rf]
             [clojure.string :refer [join]]
             [elo.date-picker-utils :refer [date-time-picker]]
+            [cljsjs.selectize]
             [cljsjs.moment]))
 
 (def timestamp-format "YYYY-MM-DDZhh:mm:SS")
@@ -22,14 +23,16 @@
 
 (defn- drop-down
   [opts key]
-  (into [:select.form-control {:on-change (set-val key)}]
+  (into [:select.form-control {:id (name key)
+                               :on-change (set-val key)}]
         (cons [:option ""]
               (for [o opts]
                 [:option {:value o} o]))))
 
 (defn- drop-down-players
   [players key]
-  (into [:select.form-control {:on-change (set-val key)}]
+  (into [:select.form-control {:on-change (set-val key)
+                               :id (name key)}]
         (cons [:option ""]
               (for [p players]
                 [:option {:value (:id p)} (:name p)]))))
