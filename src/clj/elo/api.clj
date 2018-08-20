@@ -55,6 +55,8 @@
             :rel "stylesheet"
             :type "text/css"}]
 
+
+
     [:link {:href (cache-buster "css/react-datepicker-cssmodules.css")
             :rel "stylesheet"
             :type "text/css"}]
@@ -70,6 +72,10 @@
 
     (when (env :google-analytics-key)
       (ga-js))
+
+    ;;TODO: that's an example of how to use google maps API
+    ;; [:script {:src "http://maps.googleapis.com/maps/api/js?key=AIzaSyBmKQyNoVO3nj08cxIJMRREPDWpJxWOpgM"
+    ;;           :async true}]
 
     ;; [:script {:src "https://code.jquery.com/jquery-3.2.1.slim.min.js"
     ;;           :integrity "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
